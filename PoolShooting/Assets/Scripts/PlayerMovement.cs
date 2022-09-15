@@ -18,7 +18,7 @@ public class PlayerMovement : MonoBehaviour
     {
         float x = Input.GetAxis("Horizontal");
         float y = Input.GetAxis("Vertical");
-        Vector3 dir = new Vector3(x, y, 0);
+        Vector3 dir = new Vector3(x, y, 0).normalized;
 
         rigid.velocity = dir * playerSpeed;
         transform.position = new Vector3(Mathf.Clamp(transform.position.x, -3.5f, 3.5f), Mathf.Clamp(transform.position.y, -6.5f, 6.5f));
